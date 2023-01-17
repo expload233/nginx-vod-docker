@@ -7,7 +7,7 @@ ENV PKG_RELEASE     1~bullseye
 
 EXPOSE 8080
 
-RUN apk add --no-cache wget ca-certificates build-base openssl openssl-dev zlib-dev linux-headers pcre-dev ffmpeg ffmpeg-dev gettext
+RUN apt-get update && apt-get install -y build-essential make libpcre3 libpcre3-dev  openssl libssl-dev libgd-dev zlib1g-dev openssl wget curl ca-certificates ffmpeg 
 
 # 拉取nginx源码
 RUN wget https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz \
